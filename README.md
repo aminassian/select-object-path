@@ -24,7 +24,7 @@ $ npm install select-object-path
 Usage
 ------------------------------------------
 
-Param to function ``sop.select`` must repect json-schema [select.in.schema.json](https://raw.githubusercontent.com/aminassian/select-object-path/master/schema/select.in.schema.json). 
+Param to function ``sop.select`` must repect json-schema [select.in.schema.json](https://raw.githubusercontent.com/aminassian/select-object-path/master/schema/select.in.schema.json).
 
 ```js
 var sop = require('select-object-path');
