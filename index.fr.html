@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="sélectionner et extraire les chemins d'un objet json">
+    <title>select-object-path</title>    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/layouts/marketing.css">
+    <!--<![endif]-->
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/javascript.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/bash.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="index.html"><i class="fa fa-tree fa-lg"></i> select-object-path v1.0.0</a>
+        <ul>
+            <li class=""><a lang="en" href="index.html" title="english">En</a></li>
+            <li class="pure-menu-selected"><a lang="fr" href="index.fr.html" title="français">Fr</a></li>
+            <li class=""><a lang="en" href="coverage/index.html" title="Couverture de code">Couverture</a></li>
+            <li class=""><a lang="en" href="api/index.html" title="documentation api">Api</a></li>
+            <li class=""><a lang="en" target="_blank" href="https://github.com/aminassian/select-object-path" title="voir le projet sur github"><i class="fa fa-github"></i>&nbsp;GitHub</a></li>
+            <li class=""><a lang="en" href="https://github.com/aminassian/select-object-path/zipball/master" title="Télécharger le fichier .zip"><i class="fa fa-file-zip-o"></i>&nbsp;.zip</a></li>
+            <li class=""><a lang="en" href="https://github.com/aminassian/select-object-path/tarball/master" title="Télécharger le fichier .tar.gz"><i class="fa fa-file-archive-o"></i>&nbsp;.tar.gz</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="content">
+        <div class="pure-g">
+
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Présentation
+                </h3>
+                <p>
+                    <p>sélectionner et extraire les chemins d&#39;un objet json</p>
+
+                    
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Installation
+                </h3>
+                <p>
+                    Ce module est disponible sur <a lang="en" target="_blank" href="https://www.npmjs.com/package/select-object-path">npm</a> : select-object-path
+                    <pre><code class="bash">$ npm install select-object-path</code></pre>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Utilisation
+                </h3>
+                <p>
+                    <p>Le paramètre de la fonction <code>sop.select</code> doit respecter le schéma json <a href="https://raw.githubusercontent.com/aminassian/select-object-path/master/schema/select.in.schema.json">select.in.schema.json</a>.</p>
+
+                    <pre><code class="javascript">var sop = require('select-object-path');
+var result = sop.select({
+    "select" : "-*,ccc", // exclude all except ccc
+    "object": {
+        "aaa": {
+            "bbb" : {
+                "ccc" : null
+            }
+        },
+        "ccc": 10
+    }
+});</code></pre>
+                    <p><code>sop.select</code> retourne un résultat qui respecte le schéma json <a href="https://raw.githubusercontent.com/aminassian/select-object-path/master/schema/select.out.schema.json">select.out.schema.json</a>.</p>
+
+                    <pre><code class="javascript">{
+    "path": [
+        "/aaa/bbb/ccc",
+        "/ccc"
+    ],
+    "licence": "GPL-3.0",
+    "donate": [
+        "https://pledgie.com/campaigns/28037",
+        "https://gratipay.com/aminassian"
+    ]
+}</code></pre>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Test
+                </h3>
+                <p>
+                    Pour exécuter les tests : téléchargez le code source,  installez les dépendances puis lancez la commande `npm test`.
+                    <pre><code class="bash">$ git clone https://github.com/aminassian/select-object-path.git
+$ cd select-object-path
+$ npm install
+$ npm test</code></pre>
+                    
+                    Couverture : <a lang="en" href="coverage/index.html" title="Couverture de code">coverage/index.html</a>
+                </p>
+
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Fait par
+                </h3>
+                <p>
+                    L&#39;auteur original de select-object-path est  <a target="_blank" href="https://github.com/aminassian">Alban Minassian</a>.
+                </p>
+                <p>
+                    Si vous aimez select-object-path et souhaitez le soutenir, vous êtes invités à faire un don . Il va sûrement être apprécié! Merci !
+                </p>
+                <p>
+                                                            <a href="https://pledgie.com/campaigns/28037"><img src="https://raw.githubusercontent.com/aminassian/select-object-path/master/img/pledgie32x32.png" alt="donate with your pledgie account" title=""></a>
+                                        <a href="https://gratipay.com/aminassian"><img src="https://raw.githubusercontent.com/aminassian/select-object-path/master/img/gratipay32x32.png" alt="donate with your gratipay account" title=""></a>
+                    
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Licence
+                </h3>
+                <p>
+                    <a target="_blank" href="https://github.com/aminassian/select-object-path/blob/master/LICENCE.txt">GPL-3.0</a>.
+                </p>
+                <p>
+                    Librairies externes :
+                </p>
+                <p>
+                    <ul>
+                                                            <li>
+                        <a lang="en" target="_blank" href="http://underscorejs.org/">underscore.js</a>
+                        (<a lang="en" target="_blank" href="https://github.com/jashkenas/underscore/blob/master/LICENSE">license</a>)
+                    </li>
+                                        <li>
+                        <a lang="en" target="_blank" href="http://epeli.github.io/underscore.string/">underscore.string</a>
+                        (<a lang="en" target="_blank" href="https://github.com/epeli/underscore.string#licence">license</a>)
+                    </li>
+                                        <li>
+                        <a lang="en" target="_blank" href="https://github.com/substack/js-traverse">js-traverse</a>
+                        (<a lang="en" target="_blank" href="https://github.com/substack/js-traverse/blob/master/LICENSE">license</a>)
+                    </li>
+                                        <li>
+                        <a lang="en" target="_blank" href="https://github.com/natesilva/jayschema">jayschema</a>
+                        (<a lang="en" target="_blank" href="https://github.com/natesilva/jayschema/blob/master/LICENSE">license</a>)
+                    </li>
+                    
+                    </ul>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Liens
+                </h3>
+                <p>
+                    <ul>
+                                                <li>www : <a target="_blank" href="http://aminassian.github.io/select-object-path">http://aminassian.github.io/select-object-path</a></li>
+                                                <li>www [fr] : <a target="_blank" href="http://aminassian.github.io/select-object-path/index.fr.html">http://aminassian.github.io/select-object-path/index.fr.html</a></li>
+                                                <li>coverage : <a target="_blank" href="http://aminassian.github.io/select-object-path/coverage/index.html">http://aminassian.github.io/select-object-path/coverage/index.html</a></li>
+                                                <li>doc api : <a target="_blank" href="http://aminassian.github.io/select-object-path/api/index.html">http://aminassian.github.io/select-object-path/api/index.html</a></li>
+                                                <li>github : <a target="_blank" href="https://github.com/aminassian/select-object-path">https://github.com/aminassian/select-object-path</a></li>
+                                                <li>issues : <a target="_blank" href="https://github.com/aminassian/select-object-path/issues">https://github.com/aminassian/select-object-path/issues</a></li>
+                                                <li>npm : <a target="_blank" href="https://www.npmjs.com/package/select-object-path">https://www.npmjs.com/package/select-object-path</a></li>
+                                                                        <li>pledgie : <a target="_blank" href="https://pledgie.com/campaigns/28037">https://pledgie.com/campaigns/28037</a></li>
+                                                <li>gratipay : <a target="_blank" href="https://gratipay.com/aminassian">https://gratipay.com/aminassian</a></li>
+                                            </ul>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Information versions
+                </h3>
+                <p>
+                    <ul>
+                                                    <li>1.0.0 (2015/01/24):</li>
+                            <ul>
+                                                                    <li>[init] init</li>
+                                                            </ul>
+                                            </ul>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer l-box is-center">
+        Copyright © 2015 -  Fièrement fabriqué à Nantes <a lang="fr" target="_blank" href="http://www.nantestech.com"><img src="img/NANTES-TECH-LOGO-BLANC-HOR.png" alt="" title=""></a>
+    </div>
+
+</div>
+</body>
+</html>
