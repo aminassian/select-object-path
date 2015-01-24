@@ -1,6 +1,6 @@
 {
     "name": "select-object-path",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "http://aminassian.github.io/select-object-path",
     "description": "select and extract path from json object",
     "author": { "name": "Alban Minassian" },
@@ -38,7 +38,7 @@
         "underscore": "*",
         "underscore.string": "*",
         "traverse": "*",
-        "commander": "*"
+        "jayschema": "*"
     },
     "devDependencies": {
         "chai": "*",
@@ -46,7 +46,6 @@
         "jsdoc": "*",
         "jshint": "*",
         "mocha": "*",
-        "jayschema": "*",
         "istanbul": "*",
         "yadda": "*"
     },

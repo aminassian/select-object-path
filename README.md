@@ -4,7 +4,7 @@
 [![coveralls status][badge-image-coveralls]][badge-url-coveralls]
 
 
-![select-object-path][icon-image64x64] select-object-path v1.0.0
+![select-object-path][icon-image64x64] select-object-path v1.0.1
 =================================================
 
 Introduction
@@ -24,7 +24,7 @@ $ npm install select-object-path
 Usage
 ------------------------------------------
 
-Param to function ``sop.select`` must repect json-schema [select.in.schema.json](https://raw.githubusercontent.com/aminassian/select-object-path/master/schema/select.in.schema.json).
+Param to function ``sop.select`` must repect json-schema [select.in.schema.json](https://raw.githubusercontent.com/aminassian/select-object-path/master/schema/select.in.schema.json). 
 
 ```js
 var sop = require('select-object-path');
@@ -114,7 +114,7 @@ Links
 Release Notes
 ------------------------------------------
 
-- 1.0.0 (2015/01/24):
+- 1.0.1 (2015/01/24):
     - ``init`` init
 
 ------------------------------------------
